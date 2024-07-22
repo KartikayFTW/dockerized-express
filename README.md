@@ -8,6 +8,7 @@ The project has been developed incrementally with the following feature branches
 
 1. `feat/add-docker-support`: Initial app setup with Dockerfile
 2. `feat/postgres`: Added Prisma, signup, and signin routes
+3. `feat/docker-compose`: Added Docker Compose for easier multi-container management
 
 All features are merged into the main branch.
 
@@ -67,6 +68,12 @@ docker run -d \
   express-app
 ```
 
+## Start the Application Using Docker Compose
+Run the following command to start the application and its dependencies:
+
+```docker-compose up -d```
+
+
 ## API Routes
 
 - POST `/signup`: Create a new user
@@ -83,7 +90,29 @@ docker run -d \
    - Persist data beyond the lifecycle of containers.
    - Prevent data loss when containers are stopped or removed.
    - Easily backup and restore data.
+  
+     
+Why use Docker Compose?
+1. **Simplified Multi-Container Management**:
 
-## Future Improvements
+Docker Compose simplifies the process of running and managing multiple containers.
+It manages network creation automatically and links containers together with ease.
 
-In the future, we plan to use Docker Compose to simplify the process of running multiple containers and managing their configurations.
+2. **Ease of Configuration**:
+
+Allows for easy configuration of environment variables and volume mounts.
+Provides a single YAML file to define and manage your multi-container application setup.
+
+3. **Improved Maintainability and Version Control**:
+
+Easier to maintain and version control your application setup.
+Allows for defining all container configurations in one place.
+
+4. **Dependency Management**:
+
+Ensures that the dependent containers are started in the correct order.
+Handles restarting of containers if one fails, ensuring the application remains available.
+With Docker Compose, you can manage and run your multi-container application with a single command, making development and deployment more efficient and streamlined.
+
+
+
